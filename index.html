@@ -107,57 +107,54 @@
         /* Bottom Footer bar */
         footer {
             background-color: #f2f2f2;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Image Example</title>
+    <style>
+        /* Center everything and set a solid white background */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
-            padding: 15px 30px;
-            border-top: 1px solid #dadce0;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff; /* White background */
+            overflow: hidden;
         }
 
-        footer a {
-            text-decoration: none;
-            color: #70757a;
-            font-size: 14px;
-            margin-right: 15px;
+        /* Style the image and apply the infinite rotation animation */
+        .rotating-image {
+            width: 300px; /* Adjust size as needed */
+            height: auto;
+            /* 
+               - "spin" is the keyframe name
+               - "10s" is the duration (change to speed up or slow down)
+               - "linear" keeps the rotation speed constant
+               - "infinite" makes it loop forever
+            */
+            animation: spin 10s linear infinite; 
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        /* Define the 360-degree rotation animation steps */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="#link">Mail</a>
-        <a href="#link">Images</a>
-        <a href="#link" style="font-weight: bold;">Profile</a>
-    </header>
-
-    <main>
-        <div class="brand-title">Garbingle</div>
-        
-        <div class="search-container">
-            <input type="text" class="search-input" aria-label="Search field" autofocus>
-        </div>
-
-        <div class="button-container">
-            <button class="btn">Search the Web</button>
-            <button class="btn">Random Page</button>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-left">
-            <a href="#link">About</a>
-            <a href="#link">Advertising</a>
-            <a href="#link">Business</a>
-        </div>
-        <div class="footer-right">
-            <a href="#link">Privacy</a>
-            <a href="#link">Terms</a>
-            <a href="#link">Settings</a>
-        </div>
-    </footer>
+    <!-- Replace the src URL with your local image file or online image link -->
+    <img class="rotating-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt1JRwTY093KvLhMuKh-HhonWqbyPiuhxQ5Q&s" alt="Rotating Artwork">
 
 </body>
 </html>
+
